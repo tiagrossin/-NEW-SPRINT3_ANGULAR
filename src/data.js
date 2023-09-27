@@ -1,5 +1,13 @@
 const movies = [
   {
+    title: 'First Man',
+    year: 2018,
+    director: 'Damien Chazelle',
+    duration: '3h 15min',
+    genre: ['Biography', 'Drama', 'History'],
+    score: 7.3
+  },
+  {
     title: 'The Shawshank Redemption',
     year: 1994,
     director: 'Frank Darabont',
