@@ -16,8 +16,10 @@ function getMoviesFromDirector(array, director) {
 function moviesAverageOfDirector(array, director) {
   let directorArray = getMoviesFromDirector(array, director);
   let scoreArray = directorArray.map((movie) => movie.score);
-  let subtotal = scoreArray.reduce((accumulator, currentValue) => accumulator + currentValue);
-  let result = subtotal/scoreArray.length;
+  let subtotal = scoreArray.reduce(
+    (accumulator, currentValue) => accumulator + currentValue
+  );
+  let result = subtotal / scoreArray.length;
   console.log('EXERCISE 3 ->', result);
   return result;
 }
@@ -25,8 +27,15 @@ function moviesAverageOfDirector(array, director) {
 // Exercise 4:  Alphabetic order by title
 function orderAlphabetically(array) {
   let nameArray = array.map((movie) => movie.title);
-  //let firstLetterArray = nameArray((string) )
-  console.log(nameArray);
+  let result = nameArray.sort((a, b) => {
+    a.replace(/\b(?:the)\b/gi, '');
+    b.replace(/\b(?:the)\b/gi, '');
+    return a.localeCompare(b);
+  });
+  if (result.length > 20) {
+    result.splice(0, result.length)
+  }
+  console.log('EXERCISE 4 ->', result);
   return result;
 }
 
