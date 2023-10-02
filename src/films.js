@@ -27,18 +27,13 @@ function moviesAverageOfDirector(array, director) {
 // Exercise 4:  Alphabetic order by title
 function orderAlphabetically(array) {
   let nameArray = array.map((movie) => movie.title);
-  let result = nameArray.sort((a, b) => {
-    a.replace(/\b(?:the)\b/gi, '');
-    b.replace(/\b(?:the)\b/gi, '');
-    return a.localeCompare(b);
-  });
+  let result = nameArray.sort((a, b) => a.localeCompare(b));
   if (result.length > 20) {
-    result.splice(0, result.length)
+    result.splice(20, result.length);
   }
   console.log('EXERCISE 4 ->', result);
   return result;
 }
-
 // Exercise 5: Order by year, ascending
 function orderByYear() {}
 
