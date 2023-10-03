@@ -19,7 +19,7 @@ function moviesAverageOfDirector(array, director) {
   let subtotal = scoreArray.reduce(
     (accumulator, currentValue) => accumulator + currentValue
   );
-  let result = Math.round((subtotal / scoreArray.length) * 1e2 ) / 1e2;
+  let result = Math.round((subtotal / scoreArray.length) * 1e2) / 1e2;
   console.log('EXERCISE 3 ->', result);
   return result;
 }
@@ -39,12 +39,12 @@ function orderAlphabetically(array) {
 function orderByYear(array) {
   let result = array.toSorted((a, b) => {
     if (a.year === b.year) {
-      return (a.title).localeCompare(b.title);
+      return a.title.localeCompare(b.title);
     }
     return a.year - b.year;
   });
   //let result = arrayByYear.
-  console.log("EXERCISE 5 ->", result);
+  console.log('EXERCISE 5 ->', result);
   return result;
 }
 
@@ -55,12 +55,24 @@ function moviesAverageByCategory(array, genre) {
   let subtotal = scoreArray.reduce(
     (accumulator, currentValue) => accumulator + currentValue
   );
-  let result = Math.round((subtotal / scoreArray.length) * 1e2 ) / 1e2;
+  let result = Math.round((subtotal / scoreArray.length) * 1e2) / 1e2;
   console.log('EXERCISE 6 ->', result);
   return result;
 }
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {}
+function hoursToMinutes(array) {
+  let result = array.map((movie) => {
+    let durationString = movie.duration;
+    let hours = parseInt(durationString[0]);
+    let minutes = parseInt(durationString.slice(3, 5));
+    if(isNaN(minutes)){
+      minutes = 0;
+    }
+    return { ...movie, duration: hours * 60 + minutes };
+  });
+  console.log("EXERCISE 7 ->", result);
+  return result;
+}
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {}
