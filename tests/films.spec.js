@@ -292,8 +292,49 @@ describe('Function "orderByYear"', () => {
 
 // Exercise 6
 // YOUR CODE HERE. Test moviesAverageByCategory()
+describe('Function "moviesAverageByCategory"', () => {
+  it('should be declared', () => {
+    expect(typeof moviesAverageByCategory).toBe('function');
+  });
 
+  it('should return a number', () => {
+    expect(typeof moviesAverageByCategory(movies, 'Drama')).toBe('number');
+  });
 
+  it('should be different from NaN', () => {
+    expect(moviesAverageByCategory(movies, 'Drama')).not.toBeNaN();
+  });
+
+  it(' should return the average score of movies selecting only the category. With 2 decimals! ', () => {
+    expect(moviesAverageByCategory([
+      {
+        title: 'Ah-ga-ssi',
+        year: 2016,
+        director: 'Chan-wook Park',
+        duration: '2h 24min',
+        genre: ['Crime', 'Drama', 'Mystery', 'Romance', 'Thriller'],
+        score: 8.1
+      },
+      {
+        title: 'Piscores of the Caribbean: The Curse of the Black Pearl',
+        year: 2003,
+        director: 'Gore Verbinski',
+        duration: '2h 23min',
+        genre: ['Action', 'Adventure', 'Fantasy'],
+        score: 8
+      },
+      {
+        title: 'PK',
+        year: 2014,
+        director: 'Rajkumar Hirani',
+        duration: '2h 33min',
+        genre: ['Comedy', 'Drama', 'Fantasy', 'Sci-Fi'],
+        score: 8.2
+      }
+    ], 'Drama')).toBe(8.15);
+  });
+
+});
 // Exercise 7
 describe('Function "hoursToMinutes"', () => {
   it('should be declared', () => {
