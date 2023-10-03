@@ -59,6 +59,7 @@ function moviesAverageByCategory(array, genre) {
   console.log('EXERCISE 6 ->', result);
   return result;
 }
+
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes(array) {
   let result = array.map((movie) => {
